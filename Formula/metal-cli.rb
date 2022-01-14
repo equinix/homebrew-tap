@@ -42,6 +42,8 @@ class MetalCLI < Formula
     end
   end
 
+  depends_on "go" => :build
+
   test do
     system "#{bin}/metal -v"
   end
