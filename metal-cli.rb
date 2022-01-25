@@ -5,13 +5,13 @@
 class MetalCli < Formula
   desc "Official Equinix Metal CLI"
   homepage "https://metal.equinix.com/developers/docs/libraries/cli/"
-  version "0.7.2-alpha1"
+  version "0.7.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/equinix/metal-cli/releases/download/v0.7.2-alpha1/metal-darwin-amd64"
-      sha256 "b978562b898601466d39d00665505df4bfaf90b30c24fe97c3d514efab9d79e8"
+      url "https://github.com/equinix/metal-cli/releases/download/v0.7.2/metal-darwin-amd64"
+      sha256 "c5af27898827027e987f64482c14c762f7c827fe34fe3960f45be14b64fb70b6"
 
       def install
         bin.install "metal-darwin-amd64" => "metal"
@@ -21,24 +21,24 @@ class MetalCli < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/equinix/metal-cli/releases/download/v0.7.2-alpha1/metal-linux-amd64"
-      sha256 "1cdfb53ccb172ac105183023ccd450ddec4407a9ed0a5bab55fe09e75058fb9f"
+      url "https://github.com/equinix/metal-cli/releases/download/v0.7.2/metal-linux-amd64"
+      sha256 "32bcfaae7ef610f917c2f24067c58b232b5e8ebdebf8afd349764f37f0095708"
 
       def install
         bin.install "metal-linux-amd64" => "metal"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/equinix/metal-cli/releases/download/v0.7.2-alpha1/metal-linux-arm64"
-      sha256 "a7d2b7e3e9e921e322f2a071f1f49bb5869e13392af1d7961b77c90368e92b83"
+      url "https://github.com/equinix/metal-cli/releases/download/v0.7.2/metal-linux-arm64"
+      sha256 "9f577a15e93c47b7e901d19917149647b419ef25bd87612bcd70451fec38608e"
 
       def install
         bin.install "metal-linux-arm64" => "metal"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/equinix/metal-cli/releases/download/v0.7.2-alpha1/metal-linux-armv6"
-      sha256 "974f702e6cf3a862e5d285b2cc42b195a843c87249929995a78c22d67391633a"
+      url "https://github.com/equinix/metal-cli/releases/download/v0.7.2/metal-linux-armv6"
+      sha256 "3683354ea2f91e9cb99728cbe1b391560a94a57e4da53e27ee9cd0ea342cf902"
 
       def install
         bin.install "metal-linux-armv6" => "metal"
@@ -47,8 +47,4 @@ class MetalCli < Formula
   end
 
   depends_on "go" => :build
-
-  test do
-    system "#{bin}/metal -v"
-  end
 end
