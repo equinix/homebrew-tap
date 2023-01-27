@@ -5,23 +5,23 @@
 class MetalCli < Formula
   desc "Official Equinix Metal CLI"
   homepage "https://metal.equinix.com/developers/docs/libraries/cli/"
-  version "0.12.0"
+  version "0.13.0"
   license "MIT"
 
   depends_on "go" => :build
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/equinix/metal-cli/releases/download/v0.12.0/metal-darwin-amd64"
-      sha256 "0f08e936fbd0b6c86e4aaa07a6c77c20595b38d27d1afbdd531466df4d7e64bc"
+      url "https://github.com/equinix/metal-cli/releases/download/v0.13.0/metal-darwin-amd64"
+      sha256 "4b634ce85861d2fac6eaeca7e29dc9de9a4472d208661a9ae64a8fb71cc74092"
 
       def install
         bin.install "metal-darwin-amd64" => "metal"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/equinix/metal-cli/releases/download/v0.12.0/metal-darwin-arm64"
-      sha256 "0501ad5019d43a5a612bc9711ae548404292f285e2fc47ef5073f24fae433928"
+      url "https://github.com/equinix/metal-cli/releases/download/v0.13.0/metal-darwin-arm64"
+      sha256 "511403bc1efd63e8b1090e88561d5b6edfd7eb980db7d395f691afe6cd0c2547"
 
       def install
         bin.install "metal-darwin-arm64" => "metal"
@@ -30,28 +30,28 @@ class MetalCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/equinix/metal-cli/releases/download/v0.12.0/metal-linux-arm64"
-      sha256 "87b92f85dabd899bcb35136b7507861afe6477986d278f5771f82409f928b47f"
-
-      def install
-        bin.install "metal-linux-arm64" => "metal"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/equinix/metal-cli/releases/download/v0.12.0/metal-linux-amd64"
-      sha256 "24be9dcf0e74a8293567734b39fd0b8186877a7a67c4a40935ee1d88cbded394"
+      url "https://github.com/equinix/metal-cli/releases/download/v0.13.0/metal-linux-amd64"
+      sha256 "d119fef1bf3cdbdfe79f5602b286fba8d124e8ecea3fe10084e498f542771f8f"
 
       def install
         bin.install "metal-linux-amd64" => "metal"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/equinix/metal-cli/releases/download/v0.12.0/metal-linux-armv6"
-      sha256 "c80dc1a71543d2aafb972fe8328fae8e3ab1f1db31f1bc240361d6eda6436c15"
+      url "https://github.com/equinix/metal-cli/releases/download/v0.13.0/metal-linux-armv6"
+      sha256 "6dc644f594f8e1bbd04093b37fd12296e26c92b451821861a05f8afd60843caf"
 
       def install
         bin.install "metal-linux-armv6" => "metal"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/equinix/metal-cli/releases/download/v0.13.0/metal-linux-arm64"
+      sha256 "791348a416209cc601f7d5b8023d242439e8d4e764bdc8f59f6290f50b791e26"
+
+      def install
+        bin.install "metal-linux-arm64" => "metal"
       end
     end
   end
