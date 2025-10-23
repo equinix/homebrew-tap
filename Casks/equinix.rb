@@ -3,7 +3,7 @@ cask "equinix" do
   name "equinix"
   desc "Official Equinix CLI"
   homepage "https://docs.equinix.com/"
-  version "0.1.2"
+  version "0.1.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "equinix" do
   on_macos do
     on_intel do
       url "https://github.com/equinix/cli/releases/download/v#{version}/equinix-darwin-amd64.zip"
-      sha256 "a76c8cbf4a7b67447c8d1e2617f2b758dd3ad8a2b8bd8eea6dc4710cef854817"
+      sha256 "1f3b44350b1117c6e4cb64024756fae067a62604d96a13c3c047d1bbe7f581c6"
     end
     on_arm do
       url "https://github.com/equinix/cli/releases/download/v#{version}/equinix-darwin-arm64.zip"
-      sha256 "cfd01d5439462931a95e9eb7c2833dd9a8204eda871a16e719e24c8010f2ece5"
+      sha256 "820d0ff547b6109d94735f12f22040faf2861a7916ced0055c7cd4a56170cfc6"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/equinix/cli/releases/download/v#{version}/equinix-linux-amd64.zip"
-      sha256 "9d983c7461baf9fbd8482b7d4aaea3592185aa8c763b01568228506ac887a8b3"
+      sha256 "65a9120cad6fda3aeed987596e60840a5c485fe987b17eb4fdab810af28274a6"
     end
     on_arm do
       url "https://github.com/equinix/cli/releases/download/v#{version}/equinix-linux-arm64.zip"
-      sha256 "b3a55e4049ed822e0059256b8b2a0a995fb6d89a64d8d02837933d616174fdc7"
+      sha256 "68ce517787dfedb34ced62e3b47dc2cfc296655b0800278347900e4008c6799a"
     end
   end
 
